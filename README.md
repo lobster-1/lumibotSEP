@@ -7,9 +7,7 @@ Abhigya Anand
 Ishaan Iyer
  
 
-1) 
-
-Name: LumiBot 
+1) Name: LumiBot 
 
  
 
