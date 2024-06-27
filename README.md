@@ -84,7 +84,7 @@ Our own coverage tool
 
 Abhigya Anand 
 
- !(https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
 
 
 Function 1 name 
