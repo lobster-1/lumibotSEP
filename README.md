@@ -227,9 +227,7 @@ Provide a screenshot of the old coverage results
 Screenshot of the new coverage results: 
 
 
-![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/ziyu2xup.png)
 
- ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/ztnfznxy.png)
  
 Improvement: 
 
@@ -265,6 +263,9 @@ Old screenshot:
 
 New screenshot: 
 
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/ziyu2xup.png)
+
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/ztnfznxy.png)
 Improvement: 
 
 We were able to cover 5/6 branches with our new tests putting the new coverage at 83.33. Compared to only 3/6 branches covered with the original tests. This puts the improvement at 1.66 times 
