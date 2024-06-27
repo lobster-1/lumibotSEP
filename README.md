@@ -61,7 +61,7 @@ We use Coverage.py.  Following 3 commands were used coverage run; coverage repor
 
  
 
-Show the coverage results provided by the existing tool with a screenshot:
+the coverage results provided by the existing tool with a screenshot:
 
  
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/3b5ftucq.png)
@@ -91,9 +91,9 @@ Abhigya Anand
 Function 1 name:
 def check_positive(input, type, custom_message="", strict=False): 
 
-Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements:
+ patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements:
 
-Update types.py to analyse checkquantity and checkpositive · lobster-1/lumibotSEP@4222cdd (github.com) 
+https://github.com/lobster-1/lumibotSEP/commit/4222cdd1edda7437e7f7c4922a01a1ffc6c547b3
 
  
 
@@ -117,15 +117,12 @@ Function 2 name: check_price(price, custom_message="", nullable=True):
 
  
 
-Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements: 
+patch (diff) or a link to a commit made in our forked repository that shows the instrumented code to gather coverage measurements: 
 
-Update types.py hidden branches added (else) · lobster-1/lumibotSEP@8250d37 (github.com) 
-
+https://github.com/lobster-1/lumibotSEP/commit/4222cdd1edda7437e7f7c4922a01a1ffc6c547b3
  
 
- 
 
- 
 
 Provide a screenshot of the coverage results output by the instrumentation:
  
@@ -144,10 +141,9 @@ Function 1 name
 Check_numerical() 
 
 Commit: 
-Update types.py added analyses for check_numerical and check_price · lobster-1/lumibotSEP@6ab6eb8 (github.com) 
+https://github.com/lobster-1/lumibotSEP/commit/8250d378d0b7c39be5ddef5062ce901f4d172ac7 
 
 Screenshot: 
-
 
  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
   ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
@@ -157,7 +153,7 @@ Function 2
 
 Check_price() 
 
-Commit: Update types.py added analyses for check_numerical and check_price · lobster-1/lumibotSEP@6ab6eb8 (github.com) 
+Commit:
 
   
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
@@ -186,9 +182,12 @@ Check_quantity()
 
  
 
-Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test 
+patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test 
 
-Create test_numerical_check,py · lobster-1/lumibotSEP@857126c (github.com) 
+
+https://github.com/lobster-1/lumibotSEP/commit/857126cbb0c37c533571549cd0334375452f4f9c 
+
+ 
 
  
 
