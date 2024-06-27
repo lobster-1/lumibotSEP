@@ -35,14 +35,26 @@ def check_numeric(
     return input
 
 
+branch_coverage = {
+    "check_positive_1": False,  # strict branch
+    "check_positive_2": False,  # non-strict branch
+    "check_positive_3": False,  # custom message branch
+    "check_quantity_1": False,  # custom message branch
+    "check_quantity_2": False,  # no custom message branch
+}
+
 def check_positive(input, type, custom_message="", strict=False):
     if strict:
+        branch_coverage["check_positive_1"] = True
         error_message = "%r is not a strictly positive value." % input
     else:
+        branch_coverage["check_positive_2"] = True
         error_message = "%r is not a positive value." % input
+    
     if custom_message:
+        branch_coverage["check_positive_3"] = True
         error_message = f"{error_message} {custom_message}"
-
+    
     result = check_numeric(
         input,
         type,
@@ -54,8 +66,12 @@ def check_positive(input, type, custom_message="", strict=False):
 def check_quantity(quantity, custom_message=""):
     error_message = "%r is not a positive Decimal." % quantity
     if custom_message:
+        branch_coverage["check_quantity_1"] = True
         error_message = f"{error_message} {custom_message}"
-
+    else:
+        branch_coverage["check_quantity_2"] = True
+        # No additional message added
+    
     quantity = Decimal(quantity)
     result = check_numeric(
         quantity,
@@ -65,11 +81,29 @@ def check_quantity(quantity, custom_message=""):
     )
     return result
 
+def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
 
-def check_price(price, custom_message="", nullable=True):
-    error_message = "%r is not a valid price." % price
-    if custom_message:
-        error_message = f"{error_message} {custom_message}"
+# Test cases
+try:
+    print("Testing check_positive:")
+    check_positive(5, int, strict=True)
+    check_positive(0, int, strict=False)
+    check_positive(10, float, custom_message="Please enter a positive number.")
+except Exception as e:
+    print(f"Exception in check_positive: {e}")
 
-    result = check_numeric(price, float, error_message, strict=True, nullable=nullable)
-    return result
+try:
+    print("\nTesting check_quantity:")
+    check_quantity("5.5")  # This will hit the else branch (no custom message)
+    check_quantity("10", custom_message="Enter a valid quantity.")  # This will hit the if branch
+except Exception as e:
+    print(f"Exception in check_quantity: {e}")
+
+# Print coverage
+print("\nCoverage results:")
+print_coverage()
+
+# Initialize coverage tracking global variable
+
