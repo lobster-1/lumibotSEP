@@ -225,6 +225,11 @@ Provide a screenshot of the old coverage results
 
 Screenshot of the new coverage results: 
 
+
+
+
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/ztnfznxy.png)
+ 
 Improvement: 
 
 Out of the 4 branches in check_positive(including the hidden else) only 2 of them are covered by original tests. By adding our test we were able to cover all the 4 branches.  
