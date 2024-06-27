@@ -275,6 +275,7 @@ We were able to cover 5/6 branches with our new tests putting the new coverage a
  
 
 Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above) 
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/fbkx0w53.png)
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/y41hj5rc.png)
  
 
