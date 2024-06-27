@@ -246,11 +246,11 @@ Commit: https://github.com/lobster-1/lumibotSEP/commit/857126cbb0c37c533571549cd
  
 
 Old Screenshot 
-
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/551qrqiq.png)
  
 
 New coverage screenshot: 
-
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/qhq535hb.png)
 Improvement: Old tests only covered 50% of the branches while our added tests cover 100% of the branches. This puts the improvement at 2 times. 
 
 Test for check_numerical() 
