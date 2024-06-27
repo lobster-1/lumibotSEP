@@ -39,6 +39,7 @@ branch_coverage = {
     "check_positive_1": False,  # strict branch
     "check_positive_2": False,  # non-strict branch
     "check_positive_3": False,  # custom message branch
+    "check_positive_4": False,  # no custom message branch
     "check_quantity_1": False,  # custom message branch
     "check_quantity_2": False,  # no custom message branch
 }
@@ -54,6 +55,8 @@ def check_positive(input, type, custom_message="", strict=False):
     if custom_message:
         branch_coverage["check_positive_3"] = True
         error_message = f"{error_message} {custom_message}"
+    else:
+        branch_coverage["check_positive_4"] = True
     
     result = check_numeric(
         input,
@@ -70,7 +73,6 @@ def check_quantity(quantity, custom_message=""):
         error_message = f"{error_message} {custom_message}"
     else:
         branch_coverage["check_quantity_2"] = True
-        # No additional message added
     
     quantity = Decimal(quantity)
     result = check_numeric(
@@ -91,6 +93,7 @@ try:
     check_positive(5, int, strict=True)
     check_positive(0, int, strict=False)
     check_positive(10, float, custom_message="Please enter a positive number.")
+    check_positive(-1, int)  # This will hit the non-strict branch without custom message
 except Exception as e:
     print(f"Exception in check_positive: {e}")
 
@@ -104,6 +107,4 @@ except Exception as e:
 # Print coverage
 print("\nCoverage results:")
 print_coverage()
-
 # Initialize coverage tracking global variable
-
