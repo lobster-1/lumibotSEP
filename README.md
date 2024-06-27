@@ -1,134 +1,297 @@
-# Lumibot - Algorithmic Trading Library
+Report for Assignment 1 
 
-Backtesting and trading for stocks, options, crypto, futures and more!
+Members: 
 
-## Documentation - 👇 Start Here 👇
+Abhigya Anand 
 
-To get started with Lumibot, you can check out our documentation below.
+Vinesh Bonagiri 
 
-**Check out the documentation for the project here: 👉 <http://lumibot.lumiwealth.com/> 👈**
+ 
 
-## Contributors
+1) 
 
-If you want to contribute to Lumibot, you can check how to get started below. We are always looking for contributors to help us out!
+Name: LumiBot 
 
-**Steps to contribute:**
+ 
 
-1. Clone the repository to your local machine
-2. Create a new branch for your feature
-3. Run `pip install -r requirements_dev.txt` to install the developer dependencies
-4. Install all the requriements from setup.py: `pip install -e .`
-5. Make your changes
-6. Run `pytest` to make sure all the tests pass
-7. Create a pull request to merge your branch into master
+URL: Lumiwealth/lumibot: Backtesting and Trading Bots Made Easy for Crypto, Stocks, Options, Futures, FOREX and more (github.com) 
 
-## Running Tests
+ 
 
-We use pytest for our testing framework. To run the tests, you can run the following command:
+Number of lines of code and the tool used to count it: 357,561 
 
-```bash
-pytest
-```
+ 
 
-### Showing Code Coverage
+Programming language: Python 
 
-To show code coverage, you can run the following command:
+ 
 
-```bash
-coverage run; coverage report; coverage html
-```
+2) Coverage measurement 
 
-#### Adding an Alias on Linux or MacOS
+ 
 
-This will show you the code coverage in the terminal and also create a folder called "htmlcov" which will have a file called "index.html". You can open this file in your browser to see the code coverage in a more readable format.
+Inform the name of the existing tool that was executed and how it was executed: 
 
-If you don't want to keep typing out the command, you can add it as an alias in bash. To do this, you can run the following command:
+We use Coverage.py.  Following 3 commands were used coverage run; coverage report; and coverage html 
 
-```bash
-alias cover='coverage run; coverage report; coverage html'
-```
+ 
 
-This will now allow you to run the command by just typing "cover" in the terminal.
+ 
 
-```bash
-cover
-```
+ 
 
-If you want to also add it to your .bashrc file. You can do this by running the following command:
+ 
 
-```bash
-echo "alias cover='coverage run; coverage report; coverage html'" >> ~/.bashrc
-```
+ 
 
-#### Adding an Alias on Windows
+ 
 
-If you are on Windows, you can add an alias by running the following command:
+ 
 
-Add to your PowerShell Profile: (profile.ps1)
+ 
 
-```powershell
-function cover { 
- coverage run
- coverage report
- coverage html
-}
-```
+ 
 
-### Setting Up PyTest in VS Code
+ 
 
-To set up in VS Code for debugging, you can add the following to your launch.json file under "configurations". This will allow you to go into "Run and Debug" and run the tests from there, with breakpoints and everything.
+ 
 
-NOTE: You may need to change args to the path of your tests folder.
+ 
 
-```json
-{
-    "name": "Python: Pytest",
-    "type": "python",
-    "request": "launch",
-    "module": "pytest",
-    "args": [
-        "lumibot/tests"
-    ],
-    "console": "integratedTerminal",
-}
-```
+ 
 
-Here's an example of an actual launch.json file:
+ 
 
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Python: Pytest",
-            "type": "python",
-            "request": "launch",
-            "module": "pytest",
-            "args": [
-                "lumibot/tests"
-            ],
-            "console": "integratedTerminal",
-        }
-    ]
-}
-```
+Show the coverage results provided by the existing tool with a screenshot 
 
-## Community
+ 
 
-If you want to learn more about Lumibot or Algorithmic Trading then you will love out communities! You can join us on Discord.
+ 
 
-**Join us on Discord: <https://discord.gg/TmMsJCKY3T>**
+ 
 
-## Courses
+ 
 
-If you need extra help building your algorithm, we have courses to help you out.
+ 
 
-**For our Algorithmic Trading course: <https://lumiwealth.com/algorithmic-trading-landing-page>**
+3) 
 
-**For our Machine Learning for Trading course: <https://www.lumiwealth.com/product-category/machine-learning-purchase/>**
+Our own coverage tool 
 
-**For our Options Trading course: <https://www.lumiwealth.com/product-category/options-trading-purchase/>**
+ 
 
-## License
+ 
 
-This library is covered by the MIT license for open sourced software which can be found here: <https://github.com/Lumiwealth/lumibot/blob/master/LICENSE>
+<Group member name> 
+
+Abhigya Anand 
+
+ 
+
+Function 1 name 
+
+def check_positive(input, type, custom_message="", strict=False): 
+
+Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements 
+
+Update types.py to analyse checkquantity and checkpositive · lobster-1/lumibotSEP@4222cdd (github.com) 
+
+ 
+
+Provide a screenshot of the coverage results output by the instrumentation 
+
+ 
+
+ 
+
+ 
+
+ 
+
+The function was called with different parameters to make sure all of the branches are hit. If we only call it once only some of the branches will be hit 
+
+ 
+
+Function 2 name: check_price(price, custom_message="", nullable=True): 
+
+ 
+
+Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements 
+
+Update types.py hidden branches added (else) · lobster-1/lumibotSEP@8250d37 (github.com) 
+
+ 
+
+ 
+
+ 
+
+Provide a screenshot of the coverage results output by the instrumentation 
+
+ 
+
+ 
+
+The function was called with different parameters to make sure all of the branches are hit. If we only call it once only some of the branches will be hit 
+
+Member name: 
+Ishaan Iyer 
+
+Function 1 name 
+
+Check_numerical() 
+
+Commit: 
+Update types.py added analyses for check_numerical and check_price · lobster-1/lumibotSEP@6ab6eb8 (github.com) 
+
+Screenshot: 
+
+ 
+
+Function 2 
+
+Check_price() 
+
+Commit: Update types.py added analyses for check_numerical and check_price · lobster-1/lumibotSEP@6ab6eb8 (github.com) 
+
+ 
+
+Note that all the 4 functions were in lumibot/tools/types.py so have the same image for branch analysis 
+
+ 
+
+4)Coverage improvement 
+
+         
+
+Group member name: Abhigya Anand 
+
+ 
+
+ 
+
+ 
+
+Test 1 
+
+Check_quantity() 
+
+ 
+
+Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test 
+
+Create test_numerical_check,py · lobster-1/lumibotSEP@857126c (github.com) 
+
+ 
+
+Provide a screenshot of the old coverage results (the same as you already showed above): 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Provide a screenshot of the new coverage results 
+
+ 
+
+ 
+
+State the coverage improvement with a number and elaborate on why the coverage is improved: As we can see in the old coverage html report the lines in the red indicate the uncovered statements. By adding the new tests we were able to cover all the statements/branches of the function and also the hidden else branch. Since none of the branches were fully covered earlier, the improvement is of 100% 
+
+ 
+
+ 
+
+Test 2 
+
+Check_positive() 
+
+Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test 
+
+https://github.com/lobster-1/lumibotSEP/commit/857126cbb0c37c533571549cd0334375452f4f9c 
+
+ 
+
+Provide a screenshot of the old coverage results  
+
+ 
+
+ 
+
+ 
+
+Screenshot of the new coverage results: 
+
+Improvement: 
+
+Out of the 4 branches in check_positive(including the hidden else) only 2 of them are covered by original tests. By adding our test we were able to cover all the 4 branches.  
+
+Total branch coverage for that function now is 100% and improvement is 2x (from 2 to 4) 
+
+ 
+
+Group member: Ishaan Iyer 
+
+Test for check_price 
+
+Commit: https://github.com/lobster-1/lumibotSEP/commit/857126cbb0c37c533571549cd0334375452f4f9c 
+
+ 
+
+Old Screenshot 
+
+ 
+
+New coverage screenshot: 
+
+Improvement: Old tests only covered 50% of the branches while our added tests cover 100% of the branches. This puts the improvement at 2 times. 
+
+Test for check_numerical() 
+
+Commit: https://github.com/lobster-1/lumibotSEP/commit/857126cbb0c37c533571549cd0334375452f4f9c 
+
+ 
+
+Old screenshot: 
+
+New screenshot: 
+
+Improvement: 
+
+We were able to cover 5/6 branches with our new tests putting the new coverage at 83.33. Compared to only 3/6 branches covered with the original tests. This puts the improvement at 1.66 times 
+
+ 
+
+5) Overall 
+
+ 
+
+Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above) 
+
+ 
+
+Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group 
+
+ 
+
+ 
+
+Improvement; 
+
+It improved the overall statement coverage from 42.08% to 42.36% across all the files and more importantly from 52.7 % to 94.21% for the file in which our functions were chosen from 
+
+ Statement of individual contributions 
+
+ 
+
+Write what each group member did 
+
+Abhigya found the repository even though both Ishaan and Abhigya searched for several ones before finding the chosen one. Ishaan counted the lines of code via the Tokei tool. Abhigya analysed 2 functions and wrote the tests for them and Ishaan also did the same for the other 2 functions. Abhigya did the coverage report and inital coverage while Ishaan analysed the html to search for appropriate functions to analyze. 
+
+Overall it was a team effort by Ishaan and Abhigya as there were only 2 students working and 1 student was removed. 
+
+ 
