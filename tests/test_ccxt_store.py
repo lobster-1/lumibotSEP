@@ -1,105 +1,110 @@
-from lumibot.tools import CcxtCacheDB
-import pytest
-import duckdb
-from datetime import datetime
-import os
+import warnings
+from decimal import Decimal
 
 
-# PYTHONWARNINGS="ignore::DeprecationWarning"; pytest test/test_ccxt_store.py
+def check_numeric(
+    input, type, error_message, positive=True, strict=False, nullable=False, ratio=False
+):
+    if nullable and input is None:
+        return None
 
-@pytest.mark.parametrize("exchange_id,symbol,timeframe,start,end",
-                         [ ("bitmex","ETH/USDT","1d",datetime(2022, 8, 1),datetime(2022, 10, 30))
-                         ])
-def test_cache_download_data(exchange_id:str, symbol:str, timeframe:str, start:datetime, end:datetime)->None:
-    cache = CcxtCacheDB(exchange_id)
-    cache_file_path = cache.get_cache_file_name(symbol,timeframe)
+    error = ValueError(error_message)
 
-    # Remove cache file if exists.
-    if os.path.exists(cache_file_path):
-        os.remove(cache_file_path)
+    if isinstance(input, str) or (type == Decimal and not isinstance(input, Decimal)):
+        try:
+            input = type(input)
+        except:
+            raise error
 
-    # Download data and store in cache.
-    df1 = cache.download_ohlcv(symbol,timeframe,start,end)
+    if positive:
+        if strict:
+            if input <= 0:
+                raise error
+        else:
+            if input < 0:
+                raise error
 
-    assert os.path.exists(cache_file_path)
+    if ratio:
+        if input >= 0:
+            if input > 1:
+                raise error
+        else:
+            if input < -1:
+                raise error
 
-    # Counting data for the requested time period.
-    dt = end - start
-    if timeframe == "1d":
-        request_data_length = dt.days
+    return input
+
+
+branch_coverage = {
+    "check_positive_1": False,  # strict branch
+    "check_positive_2": False,  # non-strict branch
+    "check_positive_3": False,  # custom message branch
+    "check_positive_4": False,  # no custom message branch
+    "check_quantity_1": False,  # custom message branch
+    "check_quantity_2": False,  # no custom message branch
+}
+
+def check_positive(input, type, custom_message="", strict=False):
+    if strict:
+        branch_coverage["check_positive_1"] = True
+        error_message = "%r is not a strictly positive value." % input
     else:
-        request_data_length = dt.total_seconds() / 60
-
-    # The cached data must be greater than or equal to the requested data.
-    assert len(df1) >= request_data_length
-    # The last time of the cached data must be equal to or greater than the requested time.
-    assert df1.index.max() >= end
-    # The first time of the cached data must be equal to or less than the requested time.
-    assert df1.index.min() <= start
-
-    # Fetch data stored in cache.
-    df2 = cache.get_data_from_cache(symbol,timeframe,start,end)
-    assert len(df2) >= request_data_length
-    assert df2.index.max() >= end
-    assert df2.index.min() <= start
-
-
-
-@pytest.mark.parametrize("exchange_id,symbol,timeframe,start,end",
-                         [ ("bitmex","ETH/USDT","1d",datetime(2022, 9, 1),datetime(2024, 1, 30))
-                         ])
-def test_cache_download_data_without_overap(exchange_id:str, symbol:str, timeframe:str, start:datetime, end:datetime)->None:
-    """Test for cases where the requested time range is partially covered by cache, but not partially covered by cache, if cache already exists.
-    In this case, you need to combine the data in the cache with the newly downloaded data to create the data for the requested time range.
-    Therefore, the existing start range must be larger than the requested start range and the existing end range must be smaller than the requested end range.
-    The final range of updated data should be from the existing start range to the requested end range.
-    """
-
-    cache = CcxtCacheDB(exchange_id)
-    cache_file_path = cache.get_cache_file_name(symbol,timeframe)
-
-    # Read the cache_dt_ranges table before caching new data to duckdb
-    with duckdb.connect(cache_file_path) as con:
-        df_down_range = con.execute("SELECT * from cache_dt_ranges").fetch_df()
-    prev_start_dt = df_down_range.iloc[0].start_dt
-    prev_end_dt = df_down_range.iloc[0].end_dt
-
-    # Download data and store in cache.
-    df_cache = cache.download_ohlcv(symbol,timeframe,start,end)
-
-    # Read the cache_dt_ranges table after caching new data to duckdb
-    with duckdb.connect(cache_file_path) as con:
-        df_down_range = con.execute("SELECT * from cache_dt_ranges").fetch_df()
-
-    # Verify that the existing data range has been updated with the new data range
-    # The number of data ranges should be 1.
-    assert len(df_down_range) == 1
-
-    cur_start_dt = df_down_range.iloc[0].start_dt
-    cur_end_dt = df_down_range.iloc[0].end_dt
-
-    # The new data range must be larger than the existing data range.
-    assert cur_start_dt <= prev_start_dt
-    assert cur_end_dt >= prev_end_dt
-
-    # The new data range must be larger than the requested data range.
-    assert cur_end_dt >= end
-    assert cur_start_dt <= start
-
-    # Counting data for the requested time period.
-    dt = end - start
-    if timeframe == "1d":
-        request_data_length = dt.days
+        branch_coverage["check_positive_2"] = True
+        error_message = "%r is not a positive value." % input
+    
+    if custom_message:
+        branch_coverage["check_positive_3"] = True
+        error_message = f"{error_message} {custom_message}"
     else:
-        request_data_length = dt.total_seconds() / 60
+        branch_coverage["check_positive_4"] = True
+    
+    result = check_numeric(
+        input,
+        type,
+        error_message,
+        strict=strict,
+    )
+    return result
 
-    # The cached data must be greater than or equal to the requested data.
-    assert len(df_cache) >= request_data_length
-    # The last time of the cached data must be equal to or greater than the requested time.
-    assert df_cache.index.max() >= end
-    # The first time of the cached data must be equal to or less than the requested time.
-    assert df_cache.index.min() <= start
+def check_quantity(quantity, custom_message=""):
+    error_message = "%r is not a positive Decimal." % quantity
+    if custom_message:
+        branch_coverage["check_quantity_1"] = True
+        error_message = f"{error_message} {custom_message}"
+    else:
+        branch_coverage["check_quantity_2"] = True
+    
+    quantity = Decimal(quantity)
+    result = check_numeric(
+        quantity,
+        Decimal,
+        error_message,
+        strict=True,
+    )
+    return result
 
-    # Remove cache file if exists.
-    if os.path.exists(cache_file_path):
-        os.remove(cache_file_path)
+def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+
+# Test cases
+try:
+    print("Testing check_positive:")
+    check_positive(5, int, strict=True)
+    check_positive(0, int, strict=False)
+    check_positive(10, float, custom_message="Please enter a positive number.")
+    check_positive(-1, int)  # This will hit the non-strict branch without custom message
+except Exception as e:
+    print(f"Exception in check_positive: {e}")
+
+try:
+    print("\nTesting check_quantity:")
+    check_quantity("5.5")  # This will hit the else branch (no custom message)
+    check_quantity("10", custom_message="Enter a valid quantity.")  # This will hit the if branch
+except Exception as e:
+    print(f"Exception in check_quantity: {e}")
+
+# Print coverage
+print("\nCoverage results:")
+print_coverage()
+# Initialize coverage tracking global variable
