@@ -129,7 +129,7 @@ Update types.py hidden branches added (else) · lobster-1/lumibotSEP@8250d37 (gi
 Provide a screenshot of the coverage results output by the instrumentation 
 
  
-
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
  
 
 The function was called with different parameters to make sure all of the branches are hit. If we only call it once only some of the branches will be hit 
@@ -146,7 +146,7 @@ Update types.py added analyses for check_numerical and check_price · lobster-1/
 
 Screenshot: 
 
- 
+  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
 
 Function 2 
 
@@ -154,7 +154,7 @@ Check_price()
 
 Commit: Update types.py added analyses for check_numerical and check_price · lobster-1/lumibotSEP@6ab6eb8 (github.com) 
 
- 
+  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
 
 Note that all the 4 functions were in lumibot/tools/types.py so have the same image for branch analysis 
 
