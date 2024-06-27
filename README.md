@@ -67,9 +67,6 @@ Show the coverage results provided by the existing tool with a screenshot
  
 
  
-![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
-
- 
 
  
 
@@ -85,7 +82,9 @@ Our own coverage tool
 
 Abhigya Anand 
 
- ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
+
+ 
+
 
 
 Function 1 name 
@@ -101,9 +100,10 @@ Update types.py to analyse checkquantity and checkpositive · lobster-1/lumibotS
 Provide a screenshot of the coverage results output by the instrumentation 
 
  
-
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
  
 
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
  
 
  
