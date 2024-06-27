@@ -106,7 +106,8 @@ Provide a screenshot of the coverage results output by the instrumentation
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
  
 
- 
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
+
 
 The function was called with different parameters to make sure all of the branches are hit. If we only call it once only some of the branches will be hit 
 
@@ -129,8 +130,9 @@ Update types.py hidden branches added (else) · lobster-1/lumibotSEP@8250d37 (gi
 Provide a screenshot of the coverage results output by the instrumentation:
  
   ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
-![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
- 
+
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
+
  
 The function was called with different parameters to make sure all of the branches are hit. If we only call it once only some of the branches will be hit 
 
@@ -148,7 +150,8 @@ Screenshot:
 
   ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
- 
+  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
+
 
 Function 2 
 
@@ -158,6 +161,8 @@ Commit: Update types.py added analyses for check_numerical and check_price · lo
 
   ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
+ ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
+
  
 Note that all the 4 functions were in lumibot/tools/types.py so have the same image for branch analysis 
 
