@@ -1,0 +1,70 @@
+import pytest
+from decimal import Decimal
+from lumibot.entities import Asset, Order
+
+# Import the functions we want to test
+from lumibot.tools import check_numeric, check_positive, check_quantity, check_price
+
+
+class TestNumericChecks:
+    
+    def test_check_numeric_nullable(self):
+        assert check_numeric(None, int, "Error", nullable=True) is None
+
+    def test_check_numeric_conversion(self):
+        assert check_numeric("10", int, "Error") == 10
+        assert check_numeric("10.5", float, "Error") == 10.5
+        assert check_numeric("10.5", Decimal, "Error") == Decimal("10.5")
+        with pytest.raises(ValueError):
+            check_numeric("invalid", int, "Error")
+
+    def test_check_numeric_positive_strict(self):
+        assert check_numeric(10, int, "Error", strict=True) == 10
+        with pytest.raises(ValueError):
+            check_numeric(0, int, "Error", strict=True)
+        with pytest.raises(ValueError):
+            check_numeric(-1, int, "Error", strict=True)
+
+    def test_check_numeric_positive_non_strict(self):
+        assert check_numeric(10, int, "Error", strict=False) == 10
+        assert check_numeric(0, int, "Error", strict=False) == 0
+        with pytest.raises(ValueError):
+            check_numeric(-1, int, "Error", strict=False)
+
+    def test_check_numeric_ratio_pos(self):
+        with pytest.raises(ValueError):
+            check_numeric(1.5, float, "Ratio error", ratio=True)
+
+    def test_check_numeric_ratio_neg(self):
+        with pytest.raises(ValueError):
+            check_numeric(-1.5, float, "Ratio error", ratio=True)
+
+    def test_check_numeric_ratio_within_bounds(self):
+        assert check_numeric(0.5, float, "Ratio error", ratio=True) == 0.5
+        assert check_numeric(-0.5, float, "Ratio error", ratio=True) == -0.5
+
+    def test_check_positive(self):
+        assert check_positive(10, int, strict=True) == 10
+        assert check_positive(10, int, strict=False) == 10
+        with pytest.raises(ValueError):
+            check_positive(0, int, strict=True)
+        assert check_positive(0, int, strict=False) == 0
+        with pytest.raises(ValueError):
+            check_positive(-1, int, strict=True)
+        with pytest.raises(ValueError):
+            check_positive(-1, int, strict=False)
+
+    def test_check_quantity(self):
+        assert check_quantity("10") == Decimal("10")
+        with pytest.raises(ValueError):
+            check_quantity("-10")
+        with pytest.raises(ValueError):
+            check_quantity("0")
+
+    def test_check_price(self):
+        assert check_price("20.5") == 20.5
+        assert check_price(None) is None
+        with pytest.raises(ValueError):
+            check_price("-20.5")
+        with pytest.raises(ValueError):
+            check_price("invalid")
