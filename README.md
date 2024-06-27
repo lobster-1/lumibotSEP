@@ -148,7 +148,7 @@ Update types.py added analyses for check_numerical and check_price · lobster-1/
 
 Screenshot: 
 
-  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
+
  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
   ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
 
@@ -159,7 +159,7 @@ Check_price()
 
 Commit: Update types.py added analyses for check_numerical and check_price · lobster-1/lumibotSEP@6ab6eb8 (github.com) 
 
-  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
+  
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/dgbtbjyb.png)
 
