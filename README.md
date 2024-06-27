@@ -3,7 +3,8 @@ Report for Assignment 1
 Members: 
 
 Abhigya Anand 
-_Ishaan Iyer
+
+Ishaan Iyer
  
 
 1) 
@@ -60,7 +61,7 @@ We use Coverage.py.  Following 3 commands were used coverage run; coverage repor
 
  
 
-Show the coverage results provided by the existing tool with a screenshot 
+Show the coverage results provided by the existing tool with a screenshot:
 
  
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/3b5ftucq.png)
@@ -72,13 +73,13 @@ Show the coverage results provided by the existing tool with a screenshot
 
 3) 
 
-Our own coverage tool 
+Our own coverage tool:
 
  
 
  
 
-<Group member name> 
+Group member name:
 
 Abhigya Anand 
 
@@ -87,11 +88,10 @@ Abhigya Anand
 
 
 
-Function 1 name 
-
+Function 1 name:
 def check_positive(input, type, custom_message="", strict=False): 
 
-Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements 
+Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements:
 
 Update types.py to analyse checkquantity and checkpositive · lobster-1/lumibotSEP@4222cdd (github.com) 
 
@@ -116,7 +116,7 @@ Function 2 name: check_price(price, custom_message="", nullable=True):
 
  
 
-Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements 
+Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements: 
 
 Update types.py hidden branches added (else) · lobster-1/lumibotSEP@8250d37 (github.com) 
 
@@ -126,13 +126,12 @@ Update types.py hidden branches added (else) · lobster-1/lumibotSEP@8250d37 (gi
 
  
 
-Provide a screenshot of the coverage results output by the instrumentation 
+Provide a screenshot of the coverage results output by the instrumentation:
  
   ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/2pgnmd1k.png)
 ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/d34ma13a.png)
  
  
-
 The function was called with different parameters to make sure all of the branches are hit. If we only call it once only some of the branches will be hit 
 
 Member name: 
