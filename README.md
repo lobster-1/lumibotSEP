@@ -260,6 +260,7 @@ Commit: https://github.com/lobster-1/lumibotSEP/commit/857126cbb0c37c533571549cd
  
 
 Old screenshot: 
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/3qck5qm3.png)
 
 New screenshot: 
  ![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/irtkklm2.png)
