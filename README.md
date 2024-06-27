@@ -187,7 +187,7 @@ Create test_numerical_check,py · lobster-1/lumibotSEP@857126c (github.com)
 Provide a screenshot of the old coverage results (the same as you already showed above): 
 
  
-
+![image](https://github.com/lobster-1/lumibotSEP/blob/dev/Report%20for%20Assignment%201.md/htbtk0fy.png)
  
 
  
