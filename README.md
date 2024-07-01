@@ -1,13 +1,4 @@
-Report for Assignment 1 
 
-Members: 
-
-Abhigya Anand 
-
-Ishaan Iyer
- 
-
-1) Name: LumiBot 
 
  
 
